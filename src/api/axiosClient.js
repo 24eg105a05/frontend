@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosClient = axios.create({
-  baseURL: 'https://backend-jeyh.onrender.com/api',
+  // Change baseURL to use the Vite environment variable with the Render backend fallback:
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://backend-jeyh.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
